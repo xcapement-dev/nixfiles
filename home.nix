@@ -26,7 +26,12 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { 
+      fonts = [ 
+        "FiraCode"
+	"FantasqueSansMono" 
+      ]; 
+    })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -68,9 +73,22 @@
   #  /etc/profiles/per-user/tom/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # ghostty settings
+  programs.ghostty.enable = true;
+  programs.ghostty.settings = {
+    theme = "synthwave";
+    font-size = 16;
+    keybind = [
+      # "ctrl+h=goto_split:left"
+      # "ctrl+l=goto_split:right"
+    ]; 
+  };
+
+
 }
