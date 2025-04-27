@@ -107,6 +107,7 @@
 	git
 	wget
 	ghostty
+	nushell
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
