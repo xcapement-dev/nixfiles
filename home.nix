@@ -79,20 +79,35 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # bash settings
+  programs.bash = {
+    enable = true;
+  };
+  
   # ghostty settings
-  programs.ghostty.enable = true;
-  programs.ghostty.settings = {
-    theme = "synthwave";
-    font-size = 16;
-    keybind = [
-      # "ctrl+h=goto_split:left"
-      # "ctrl+l=goto_split:right"
-    ]; 
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      theme = "synthwave";
+      font-size = 16;
+      keybind = [
+        # "ctrl+h=goto_split:left"
+        # "ctrl+l=goto_split:right"
+      ]; 
+    };
+  };
+
+  # nushell configuration
+  programs.nushell = {
+    enable = true;
   };
 
   # zellij settings
-  programs.zellij.enable = true;
-  programs.zellij.enableBashIntegration = true;
+  programs.zellij = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+  };
   programs.eza.enable = true;
   programs.yazi.enable = true;
 
