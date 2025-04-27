@@ -108,6 +108,12 @@
     enableBashIntegration = true;
     enableZshIntegration = true;
   };
+
+  # lazygit settings
+  programs.lazygit = {
+    enable = true;
+  };
+
   programs.eza.enable = true;
   programs.yazi.enable = true;
 
