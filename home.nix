@@ -90,5 +90,10 @@
     ]; 
   };
 
+  # zellij settings
+  programs.zellij.enable = true;
+  programs.zellij.enableBashIntegration = true;
+  programs.eza.enable = true;
+  programs.yazi.enable = true;
 
 }
