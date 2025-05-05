@@ -6,11 +6,11 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  home.packages = [
+  home.packages = with pkgs; [
     
-    pkgs.gcc
-    pkgs.cmake
-    pkgs.rustup
+    gcc
+    cmake
+    rustup
   ];
 
   home.file = {
@@ -46,6 +46,10 @@
     enable = true;
   };
 
+  # enable and configure esh
+  programs.zsh = {
+    enable = true;
+  };
   # zellij settings
   programs.zellij = {
     enable = true;
