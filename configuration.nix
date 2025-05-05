@@ -10,6 +10,10 @@
       ./hardware-configuration.nix
     ];
 
+
+  # add me to trusted users
+  nix.settings.trusted-users = [ "root" "tom" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -104,8 +108,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	git
-	wget
+	  git
+	  wget
+    btop
+    devenv
   ];
 
   # set up login shells
@@ -144,4 +150,8 @@
 
   # install flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # rustdesk internationalisation
+  # services.rustdesk-server.enable = true;
+  # services.rustdesk-server.openFirewall = true;
 }
